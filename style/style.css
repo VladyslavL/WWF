@@ -18,7 +18,7 @@ body {
 }
 
 html {
-    font: 400 21px/1.4 "Fedra", sans-serif;
+    font: 400 21px/1.4 "Maison Neue", sans-serif;
     box-sizing: border-box;
     -ms-text-size-adjust: none;
     -webkit-text-size-adjust: none;
@@ -55,7 +55,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background: #fff;
-    font-size: 15px;
+    font-size: 13px;
     letter-spacing: 0.011538em;
     color: #fff;
 }
@@ -1224,6 +1224,21 @@ div.wpcf7 .screen-reader-response {
     }
 }
 
+.button.is_fb_msg {
+    background: #007FFF;;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0);
+}
+
+.button.is_fb_msg:active {
+    background: #007FFF;
+}
+
+@media screen and (min-width: 1025px) {
+    .button.is_fb_msg:hover {
+        background: #007FFF;
+    }
+}
+
 .button.is_share {
     min-width: 155px;
     background: #007272;
@@ -1265,7 +1280,7 @@ div.wpcf7 .screen-reader-response {
 }
 
 .button figure {
-    margin-right: 20px
+    margin-right: 20px;
 }
 
 .link,
@@ -1295,20 +1310,20 @@ div.wpcf7 .screen-reader-response {
 }
 
 h1 {
-    font: bold 34px/1.05 "Fedra", sans-serif;
+    font: bold 34px/1.05 "Noe Text", sans-serif;
     letter-spacing: -0.03113em;
     font-weight: bold;
 }
 
 @media screen and (min-width: 768px) {
     h1 {
-        font-size: 58px;
+        font-size: 38px;
     }
 }
 
 @media screen and (min-width: 1025px) {
     h1 {
-        font-size: 68px;
+        font-size: 56px;
     }
 }
 
@@ -1818,7 +1833,7 @@ b {
 }
 
 header {
-    background: #fff;
+    background: #e01220;
     height: 70px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -1845,13 +1860,13 @@ header .button.scroll_down {
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
-    color: #007272;
-    border: 1px solid #007272;
+    color: #fff;
+    border: 1px solid #fff;
 }
 
 header .button.scroll_down:hover{
-    background-color: #007272;
-    color: #fff;
+    background-color: #fff;
+    color: #e01220;
 }
 
 @media screen and (max-width: 1024px) and (min-width: 481px) and (orientation: landscape) {
@@ -2206,13 +2221,13 @@ header .button.scroll_down:hover{
 }
 
 .video_desktop_layer__left {
-    max-width: 390px;
+    max-width: 590px;
     padding: 44px 10px 0 0;
 }
 
 @media screen and (min-width: 1280px) {
     .video_desktop_layer__left {
-        max-width: 480px
+        max-width: 680px;
     }
 }
 
@@ -2246,8 +2261,8 @@ header .button.scroll_down:hover{
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     width: 74px;
     height: 74px;
     border-radius: 50%;
@@ -2436,7 +2451,7 @@ header .button.scroll_down:hover{
 
 .video__title {
     max-width: 700px;
-    padding-bottom: 1.2rem
+    padding-bottom: 1.2rem;
 }
 
 @media screen and (max-width: 767px) {

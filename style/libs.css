@@ -1,15 +1,15 @@
 /* fonts */
 @font-face {
-  font-family: 'Fedra';
-  src: url('../fonts/fedra/FedraSansAltPro-Book.otf') format("opentype");
-  font-weight: normal;
+  font-family: 'Noe Text';
+  src: url('../fonts/NoeText-Bold.otf') format("opentype");
+  font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Fedra';
-  src: url('../fonts/fedra/FedraSansAltPro-Bold.otf') format("opentype");
-  font-weight: 700;
+  font-family: 'Maison Neue';
+  src: url('../fonts/MaisonNeue-Book.otf') format("opentype");
+  font-weight: normal;
   font-style: normal;
 }
 
