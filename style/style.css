@@ -2188,7 +2188,7 @@ header .button.scroll_down:hover{
 .video-js .vjs-remaining-time,
 .video-js .vjs-big-play-button,
 .video-js .vjs-picture-in-picture-control {
-    display: none
+    display: none;
 }
 
 .vjs-text-track-cue div,
@@ -2236,12 +2236,16 @@ header .button.scroll_down:hover{
 }
 
 .video_scene {
-    text-align: center
+    text-align: center;
 }
 
 @media screen and (max-width: 1024px) {
     .video_scene {
         position: relative
+    }
+
+    .video_scene .video__play{
+        top: 50% !important;
     }
 
     .video_scene:after {

@@ -29,4 +29,24 @@ $(document).ready(function() {
             scrollTop: $(document).height()
         }, 'slow');
     });
+
+    var PlayButtonPosiotion = function(){
+        var button = $('.video__play'),
+            videoContainer = $('.video-js'),
+            videoContainerHeight = videoContainer.innerHeight(),
+            headerHeight = $('header').innerHeight(),
+            position = videoContainerHeight / 2 + headerHeight;
+
+        button.css({
+            "top": '' + position + 'px'
+        })
+    }
+
+    player.on('playing', function(){
+        PlayButtonPosiotion();
+        
+        $(window).resize(function(){
+            PlayButtonPosiotion();
+        })
+    })
 });
