@@ -42,11 +42,13 @@ $(document).ready(function() {
         })
     }
 
-    player.on('playing', function(){
-        PlayButtonPosiotion();
-        
-        $(window).resize(function(){
+    if (window.matchMedia("(min-width: 1025px)").matches) {
+        player.on('playing', function(){
             PlayButtonPosiotion();
+    
+            $(window).resize(function(){
+                PlayButtonPosiotion();
+            })
         })
-    })
+    }
 });

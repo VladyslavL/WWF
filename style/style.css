@@ -2244,10 +2244,6 @@ header .button.scroll_down:hover{
         position: relative
     }
 
-    .video_scene .video__play{
-        top: 50% !important;
-    }
-
     .video_scene:after {
         position: absolute;
         left: 0;
