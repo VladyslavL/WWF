@@ -1833,7 +1833,7 @@ b {
 }
 
 header {
-    background: #e01220;
+    background: #fff;
     height: 70px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -1979,7 +1979,7 @@ header .button.scroll_down:hover{
     }
 
     .footer__buttons .button.is_fb_msg{
-        display: none;
+/*         display: none; */
     }
 }
 

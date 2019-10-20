@@ -1,15 +1,15 @@
 /* fonts */
 @font-face {
-  font-family: 'Noe Text';
-  src: url('../fonts/NoeText-Bold.otf') format("opentype");
-  font-weight: bold;
+  font-family: 'MyriadPro';
+  src: url('../fonts/MyriadPro-Regular.otf') format("opentype");
+  font-weight: noraml;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Maison Neue';
-  src: url('../fonts/MaisonNeue-Book.otf') format("opentype");
-  font-weight: normal;
+  src: url('../fonts/MyriadPro-Semibold_0.otf') format("opentype");
+  font-weight: 600;
   font-style: normal;
 }
 
