@@ -18,7 +18,7 @@ body {
 }
 
 html {
-    font: 400 21px/1.4 "Maison Neue", sans-serif;
+    font: 400 21px/1.4 "MyriadPro", sans-serif;
     box-sizing: border-box;
     -ms-text-size-adjust: none;
     -webkit-text-size-adjust: none;
@@ -641,7 +641,7 @@ textarea:-ms-input-placeholder {
 
 .bg,
 .video_scene__inner {
-    /* background-size: contain; */
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
