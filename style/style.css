@@ -2473,6 +2473,7 @@ header .button.scroll_down:hover{
     .video__desc {
         padding-bottom: 1.2666666667rem;
         max-width: 400px;
+        font-size: 16px;
     }
 }
 
