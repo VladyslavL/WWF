@@ -1,282 +1,315 @@
 {# -*- engine:django -*- #}
 {% load static %}
+
 <!DOCTYPE html>
-<html lang="nb">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Rødekors</title>
-  <meta http-equiv="x-ua-compatible" content="IE=edge">
-  <meta name="MobileOptimized" content="width" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="format-detection" content="telephone=no">
-  <meta name="theme-color" content="#003f69">
+    <meta charset="UTF-8">
+    <title>{{ receiver.first_name }}</title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="MobileOptimized" content="width"/>
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
 
-  <meta property="og:type" content="video.other">
-  <meta property="og:url" content="{{ share_url }}">
-  <meta property="og:site_name" content="Reitan">
-  <meta property="og:title" content="{{ receiver.first_name }} – jeg håper du vil delta på RCNs Riksmøte 2020">
-  <meta property="og:description" content="{{ receiver.first_name }} – jeg håper du vil delta på RCNs Riksmøte 2020.">
-  <meta property="og:image" content="{% static &#39;landingpages/reitan/images/rev-thumbnail.jpg&#39; %}">
-  <meta property="fb:app_id" content="123456789">
-
-  <script type="text/javascript"
-    src="./index-django_files/{% static" landingpages="" reitan="" js="" jquery.js"="" %}"=""></script>
-  <script type="text/javascript" src="./index-django_files/video.min.js&#39; %}"></script>
-  <script type="text/javascript" src="./index-django_files/nb.js&#39; %}"></script>
-  <script type="text/javascript" src="./index-django_files/videojs-flash.min.js&#39; %}"></script>
-  <script type="text/javascript" src="./index-django_files/videojs-flashls-source-handler.min.js&#39; %}"></script>
-  <script type="text/javascript" src="./index-django_files/videojs-contrib-hls.min.js&#39; %}"></script>
-  <link rel="stylesheet" href="./index-django_files/{% static" landingpages="" reitan="" style="" libs.css"="" %}"="">
-  <link rel="stylesheet" href="./index-django_files/{% static" landingpages="" reitan="" style="" style.css"="" %}"="">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#003f69" />
+    <meta property="og:type" content="video.other" />
+    <meta property="og:url" content="{{ share_url }}" />
+    <meta property="og:site_name" content="Reitan" />
+    <meta property="og:title" content="{{ receiver.first_name }} – jeg håper du vil delta på RCNs Riksmøte 2020" />
+    <meta property="og:description" content="{{ receiver.first_name }} – jeg håper du vil delta på RCNs Riksmøte 2020." />
+    <meta property="og:image"       content="{% static 'landingpages/reitan/images/rev-thumbnail.jpg' %}" />
+    <meta property="fb:app_id" content="123456789" />
+    <script type="text/javascript" src="{% static "landingpages/reitan/js/jquery.js" %}"></script>
+    <script type="text/javascript" src="{% static 'landingpages/reitan/js/video.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'landingpages/reitan/js/lang/nb.js' %}"></script>
+    <script type="text/javascript" src="{% static 'landingpages/reitan/js/videojs-flash.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'landingpages/reitan/js/videojs-flashls-source-handler.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'landingpages/reitan/js/videojs-contrib-hls.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static "landingpages/reitan/style/libs.css" %}"/>
+    <link rel="stylesheet" href="{% static "landingpages/reitan/style/style.css" %}"/>
 </head>
-
 <body>
 
-  <div id="main">
+<div id="main">
 
     <header>
-      <div class="container flex">
-        <a class="logo" href="https://www.rodekors.no/" title="Gå til nettsiden">
-          <img src="./index-django_files/{% static" landingpages="" reitan="" images="" logo.png"="" %}"="" alt="logo">
-        </a>
-        <a href="javascript:;" class="button scroll_down">Del film</a>
-      </div>
+        <div class="container flex">
+            <a class="logo" href="https://www.nsf.no">
+                <img src="images/logo.svg" alt="logo">
+            </a>
+            <a href="javascript:;" class="button scroll_down">Del film</a>
+        </div>
     </header>
 
     <div class="video_scene">
-      <video class="video-js" poster="{% static &#39;landingpages/reitan/images/thumbnail.jpg&#39; %}" preload="none"
-        playsinline="" controls="">
+        <video-js class="video-js" preload="none" playsinline controls poster="{% static 'landingpages/reitan/images/thumbnail.jpg' %}" data-setup='{"customControlsOnMobile": true}'>
+            <source src="{{ phase.video_url }}" type="video/mp4">
+            <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+            </p>
+        </video-js>
+        <div class="video__play">
+            <img src="{% static "landingpages/reitan/images/play.svg" %}" alt="play">
+            <span>Play Now</span>
+        </div>
+        <div class="video_desktop_layer rwd_hide">
+            <div class="container">
+                <div class="video_desktop_layer__inner flex_start">
+                    <div class="video_desktop_layer__left">
+                        <div class="video__title">
+                            <h1><strong>Hei {{ receiver.first_name }}</strong></h1>
+                        </div>
+                        <div class="video__desc">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget sollicitudin justo. </p>
+                        </div>
+                    </div>
+                    <div class="video_desktop_layer__right flex">
+                        <div class="footer__buttons">
+                            <a href="#" class="button is_fb" target="_blank" rel="noopener">
+                                <figure>
+                                    <img src="images/fcbk.svg" alt="Facebook">
+                                </figure>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="button is_fb_msg" target="_blank" rel="noopener">
+                                <figure>
+                                    <img src="images/messenger.svg" alt="Facebook messenger">
+                                </figure>
+                                <span>Messenger</span>
+                            </a>
+                            <a href="#" class="button is_ln" target="_blank" rel="noopener">
+                                <figure>
+                                    <img src="images/lnkdn.svg" alt="LinkedIn">
+                                </figure>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" class="button is_email" target="_blank" rel="noopener">
+                                <figure>
+                                    <img src="images/email.svg" alt="Send link med e-post">
+                                </figure>
+                                <span>Send link med e-post</span>
+                            </a>
+                            <a href="video/lorem_vid01.mp4" class="button is_dw" download>
+                                <figure>
+                                    <img src="images/download.svg" alt="download">
+                                </figure>
+                                <span>Last ned filmen</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__info">
+                    <div class="copyright">
+                        <small>© 2019 NorskSykepleierforbund. all rights reserved</small>
+                    </div>
+                    <div class="powered_by">
+                        <small>Powered by <a href="#">Storm 121</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <source src="{{ phase.video_url }}" type="application/x-mpegURL">
-
-        <p class="vjs-no-js">
-          To view this video please enable JavaScript, and consider upgrading
-          to a web browser that
-          <a href="https://videojs.com/html5-video-support/" target="_blank" title="Enable JavaScript">supports HTML5
-            video</a>
-        </p>
-      </video>
-      <div class="video__play">
-        <img src="./index-django_files/{% static" landingpages="" reitan="" images="" play.svg"="" %}"="" alt="play">
-        <span>Play Now</span>
-      </div>
-      <div class="video_desktop_layer rwd_hide">
-        <div class="container">
-          <div class="video_desktop_layer__inner flex_start">
-            <div class="video_desktop_layer__left">
-              <div class="video__title">
+      <div
+        class="video_scene__inner"
+        style="background-image: url({% static "landingpages/reitan/images/thumbnail.jpg" %})"
+      >
+        <div class="video__info container">
+            <div class="video__title">
                 <h1><strong>Hei {{ receiver.first_name }}</strong></h1>
-              </div>
-              <div class="video__desc">
-                <p>Tusen takk for at du er frivillig i Røde Kors. Du bidrar til et bedre nærmiljø der hvor du bor. </p>
-              </div>
             </div>
-            <div class="video_desktop_layer__right flex">
-              <div class="footer__buttons">
-                <a href="https://www.facebook.com/sharer/sharer.php?u={{%20share_url|urlencode:%27%27%20}}" class="button is_fb" target="_blank" rel="noopener" title="Del på Facebook">
-                  <figure>
-                    <img src="./index-django_files/{% static" landingpages="" reitan="" images="" fcbk.svg"="" %}"="" alt="Facebook">
-                  </figure>
-                  <span>Facebook</span>
-                </a>
-                <a href="fb-messenger://share/?link={{ share_url|urlencode:&#39;&#39; }}&amp;app_id=123456789" class="button is_fb_msg" target="_blank" rel="noopener" title="Del på Facebook Messenger">
-                  <figure>
-                    <img src="./index-django_files/{% static" landingpages="" reitan="" images="" messenger.svg"="" %}"="" alt="Facebook messenger">
-                  </figure>
-                  <span>Messenger</span>
-                </a>
-                <a href="https://trello-attachments.s3.amazonaws.com/5cf101938d16e04e01fac7e2/5dad6fbf6402bc7f1e32c483/7d0c3ea932b2545b39e4d26f23471433/index_modded.html#" class="button is_ln" target="_blank" rel="noopener" title="Del på LinkedIn">
-                  <figure>
-                    <img src="./index-django_files/{% static" landingpages="" reitan="" images="" lnkdn.svg"="" %}"="" alt="LinkedIn">
-                  </figure>
-                  <span>LinkedIn</span>
-                </a>
-                <a href="#" class="button is_email" target="_blank" rel="noopener" title="Del på Email">
-                  <figure>
-                    <img src="./index-django_files/{% static" landingpages="" reitan="" images="" email.svg"="" %}"="" alt="Send link med e-post">
-                  </figure>
-                  <span>Send link med e-post</span>
-                </a>
-                <a href="https://trello-attachments.s3.amazonaws.com/5cf101938d16e04e01fac7e2/5dad6fbf6402bc7f1e32c483/7d0c3ea932b2545b39e4d26f23471433/%7B%7B%20download_url%20%7D%7D" class="button is_dw" download title="Last ned filmen">
-                  <figure>
-                    <img src="./index-django_files/{% static" landingpages="" reitan="" images="" download.svg"="" %}"="" alt="download">
-                  </figure>
-                  <span>Last ned filmen</span>
-                </a>
-              </div>
+            <div class="video__desc">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget sollicitudin justo. </p>
             </div>
-          </div>
-          <div class="footer__info">
+            <footer class="rwd_hide">
+                <div class="flex__rwd">
+                    <div class="footer__buttons">
+                          <a
+                          href="https://www.facebook.com/sharer/sharer.php?u={{ share_url|urlencode:'' }}"
+                          class="button is_fb"
+                          target="_blank"
+                          title="Del på Facebook"
+                          rel="noopener"
+                        >
+                          <figure>
+                            <img src="{% static "landingpages/reitan/images/fcbk.svg" %}" alt="Facebook" />
+                          </figure>
+                          <span>Facebook</span>
+                        </a>
+                        <a
+                          href="fb-messenger://share/?link={{ share_url|urlencode:'' }}&app_id=123456789"
+                          class="button is_fb_msg"
+                          title="Del på Facebook Messenger"
+                          target="_blank"
+                          rel="noopener"
+                        >
+                          <figure>
+                            <img
+                              src="{% static "landingpages/reitan/images/messenger.svg" %}"
+                              alt="Facebook messenger"
+                            />
+                          </figure>
+                          <span>Messenger</span>
+                        </a>
+                        <a
+                          href="https://www.linkedin.com/shareArticle?mini=true&url={{ share_url|urlencode:'' }}"
+                          class="button is_ln"
+                          target="_blank"
+                          title="Del på LinkedIn"
+                          rel="noopener"
+                        >
+                          <figure>
+                            <img src="{% static "landingpages/reitan/images/lnkdn.svg" %}" alt="LinkedIn" />
+                          </figure>
+                          <span>LinkedIn</span>
+                        </a>
+                        <a
+                          href=""
+                          class="button is_email"
+                          target="_blank"
+                          title="Send link med e-post"
+                          rel="noopener"
+                        >
+                          <figure>
+                            <img src="{% static "landingpages/reitan/images/email.svg" %}" alt="Send link med e-post" />
+                          </figure>
+                          <span>Send link med e-post</span>
+                        </a>
+                    </div>
+                    <div class="footer__info">
+                        <div class="copyright">
+                            <small>© 2019 NorskSykepleierforbund. all rights reserved</small>
+                        </div>
+                        <div class="powered_by">
+                            <small>Powered by <a href="#">Storm 121</a></small>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</div>
+
+<footer class="rwd_show">
+    <div class="container is_smaller flex__rwd">
+        <div class="footer__buttons">
+          <a
+            href="https://www.facebook.com/sharer/sharer.php?u={{ share_url|urlencode:'' }}"
+            class="button is_fb"
+            target="_blank"
+            title="Del på Facebook"
+            rel="noopener"
+          >
+            <figure>
+              <img src="{% static "landingpages/reitan/images/fcbk.svg" %}" alt="Facebook" />
+            </figure>
+            <span>Facebook</span>
+          </a>
+          <a
+            href="fb-messenger://share/?link={{ share_url|urlencode:'' }}&app_id=123456789"
+            class="button is_fb_msg"
+            title="Del på Facebook Messenger"
+            target="_blank"
+            rel="noopener"
+          >
+            <figure>
+              <img
+                src="{% static "landingpages/reitan/images/messenger.svg" %}"
+                alt="Facebook messenger"
+              />
+            </figure>
+            <span>Messenger</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/shareArticle?mini=true&url={{ share_url|urlencode:'' }}"
+            class="button is_ln"
+            target="_blank"
+            title="Del på LinkedIn"
+            rel="noopener"
+          >
+            <figure>
+              <img src="{% static "landingpages/reitan/images/lnkdn.svg" %}" alt="LinkedIn" />
+            </figure>
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href=""
+            class="button is_email"
+            target="_blank"
+            title="Send link med e-post"
+            rel="noopener"
+          >
+            <figure>
+              <img src="{% static "landingpages/reitan/images/email.svg" %}" alt="Send link med e-post" />
+            </figure>
+            <span>Send link med e-post</span>
+          </a>
+      </div>
+        <div class="footer__info">
             <div class="copyright">
-              <small>© 2019 Rødekors. All rights reserved</small>
+                <small>© 2019 NorskSykepleierforbund. all rights reserved</small>
             </div>
             <div class="powered_by">
-              <small>Powered by <a href="https://www.storm121.com/" title="Gå til Storm 121 nettsiden">Storm
-                  121</a></small>
+                <small>Powered by <a href="#">Storm 121</a></small>
             </div>
-          </div>
         </div>
-      </div>
     </div>
+</footer>
 
-    <div class="video_scene__inner" style="background-image: url({% static " landingpages="" reitan="" images="" thumbnail.jpg"="" %})"="">
-      <div class="video__info container">
-        <div class="video__title">
-          <h1><strong>Hei {{ receiver.first_name }}</strong></h1>
-        </div>
-        <div class="video__desc">
-          <p>Tusen takk for at du er frivillig i Røde Kors. Du bidrar til et bedre nærmiljø der hvor du bor. </p>
-        </div>
-        <footer class="rwd_hide">
-          <div class="flex__rwd">
-            <div class="footer__buttons">
-              <a href="https://www.facebook.com/sharer/sharer.php?u={{%20share_url|urlencode:%27%27%20}}" class="button is_fb" target="_blank" rel="noopener" title="Del på Facebook">
-                <figure>
-                  <img src="./index-django_files/{% static" landingpages="" reitan="" images="" fcbk.svg"="" %}"="" alt="Facebook">
-                </figure>
-                <span>Facebook</span>
-              </a>
-              <a href="fb-messenger://share/?link={{ share_url|urlencode:&#39;&#39; }}&amp;app_id=123456789" class="button is_fb_msg" target="_blank" rel="noopener" title="Del på Facebook Messenger">
-                <figure>
-                  <img src="./index-django_files/{% static" landingpages="" reitan="" images="" messenger.svg"="" %}"="" alt="Facebook messenger">
-                </figure>
-                <span>Messenger</span>
-              </a>
-              <a href="https://trello-attachments.s3.amazonaws.com/5cf101938d16e04e01fac7e2/5dad6fbf6402bc7f1e32c483/7d0c3ea932b2545b39e4d26f23471433/index_modded.html#" class="button is_ln" target="_blank" rel="noopener" title="Del på LinkedIn">
-                <figure>
-                  <img src="./index-django_files/{% static" landingpages="" reitan="" images="" lnkdn.svg"="" %}"="" alt="LinkedIn">
-                </figure>
-                <span>LinkedIn</span>
-              </a>
-              <a href="#" class="button is_email" target="_blank" rel="noopener" title="Del på Email">
-                <figure>
-                  <img src="./index-django_files/{% static" landingpages="" reitan="" images="" email.svg"="" %}"="" alt="Send link med e-post">
-                </figure>
-                <span>Send link med e-post</span>
-              </a>
-              <a href="https://trello-attachments.s3.amazonaws.com/5cf101938d16e04e01fac7e2/5dad6fbf6402bc7f1e32c483/7d0c3ea932b2545b39e4d26f23471433/%7B%7B%20download_url%20%7D%7D" class="button is_dw" download title="Last ned filmen">
-                <figure>
-                  <img src="./index-django_files/{% static" landingpages="" reitan="" images="" download.svg"="" %}"="" alt="download">
-                </figure>
-                <span>Last ned filmen</span>
-              </a>
-            </div>
-            <div class="footer__info">
-              <div class="copyright">
-                <small>© 2019 Rødekors. All rights reserved</small>
-              </div>
-              <div class="powered_by">
-                <small>Powered by <a href="https://www.storm121.com/" title="Gå til Storm 121 nettsiden">Storm
-                    121</a></small>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
-    </div>
+<script type="text/javascript" src="{% static "landingpages/reitan/js/libs.js" %}"></script>
+<script>
+	 $(document).ready(function () {
+             $('a').click(function () {
+		 $.ajax({
+                     url: '{% url "register_event" uuid=phase.uuid %}',
+                     method: 'POST',
+                     dataType: 'json',
+                     contentType: 'application/json; charset=utf-8',
+                     data: JSON.stringify({
+			 event: 'A_CLICK',
+			 originalUrl: window.location.href,
+			 lpid: '{{ landing_page_id }}',
+			 href: this.href,
+			 title: this.title
+                     })
+		 });
+             });
+	 });
 
-  </div>
+	 player.on('play', function () {
+             if (this.seeking() || this.currentTime() >= 0.1) return;
 
-  <footer class="rwd_show">
-    <div class="container is_smaller flex__rwd">
-      <div class="footer__buttons">
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{%20share_url|urlencode:%27%27%20}}" class="button is_fb" target="_blank" rel="noopener" title="Del på Facebook">
-          <figure>
-            <img src="./index-django_files/{% static" landingpages="" reitan="" images="" fcbk.svg"="" %}"="" alt="Facebook">
-          </figure>
-          <span>Facebook</span>
-        </a>
-        <a href="fb-messenger://share/?link={{ share_url|urlencode:&#39;&#39; }}&amp;app_id=123456789" class="button is_fb_msg" target="_blank" rel="noopener" title="Del på Facebook Messenger">
-          <figure>
-            <img src="./index-django_files/{% static" landingpages="" reitan="" images="" messenger.svg"="" %}"="" alt="Facebook messenger">
-          </figure>
-          <span>Messenger</span>
-        </a>
-        <a href="https://trello-attachments.s3.amazonaws.com/5cf101938d16e04e01fac7e2/5dad6fbf6402bc7f1e32c483/7d0c3ea932b2545b39e4d26f23471433/index_modded.html#" class="button is_ln" target="_blank" rel="noopener" title="Del på LinkedIn">
-          <figure>
-            <img src="./index-django_files/{% static" landingpages="" reitan="" images="" lnkdn.svg"="" %}"="" alt="LinkedIn">
-          </figure>
-          <span>LinkedIn</span>
-        </a>
-        <a href="#" class="button is_email" target="_blank" rel="noopener" title="Del på Email">
-          <figure>
-            <img src="./index-django_files/{% static" landingpages="" reitan="" images="" email.svg"="" %}"="" alt="Send link med e-post">
-          </figure>
-          <span>Send link med e-post</span>
-        </a>
-        <a href="https://trello-attachments.s3.amazonaws.com/5cf101938d16e04e01fac7e2/5dad6fbf6402bc7f1e32c483/7d0c3ea932b2545b39e4d26f23471433/%7B%7B%20download_url%20%7D%7D" class="button is_dw" download title="Last ned filmen">
-          <figure>
-            <img src="./index-django_files/{% static" landingpages="" reitan="" images="" download.svg"="" %}"="" alt="download">
-          </figure>
-          <span>Last ned filmen</span>
-        </a>
-      </div>
-      <div class="footer__info">
-        <div class="copyright">
-          <small>© 2019 Rødekors. All rights reserved</small>
-        </div>
-        <div class="powered_by">
-          <small>Powered by <a href="https://www.storm121.com/" title="Gå til Storm 121 nettsiden">Storm 121</a></small>
-        </div>
-      </div>
-    </div>
-  </footer>
+             $.ajax({
+		 url: '{% url "register_event" uuid=phase.uuid %}',
+		 method: 'POST',
+		 dataType: 'json',
+		 contentType: 'application/json; charset=utf-8',
+		 data: JSON.stringify({
+                     event: 'VID_PLAY',
+                     originalUrl: window.location.href,
+                     lpid: '{{ landing_page_id }}'
+		 })
+             });
+	 });
 
-  <script type="text/javascript"
-    src="./index-django_files/{% static" landingpages="" reitan="" js="" libs.js"="" %}"=""></script>
-  <script>
-    $(document).ready(function () {
-      $('a').click(function () {
-        $.ajax({
-          url: '{% url "register_event" uuid=phase.uuid %}',
-          method: 'POST',
-          dataType: 'json',
-          contentType: 'application/json; charset=utf-8',
-          data: JSON.stringify({
-            event: 'A_CLICK',
-            originalUrl: window.location.href,
-            lpid: '{{ landing_page_id }}',
-            href: this.href,
-            title: this.title
-          })
-        });
-      });
-    });
-
-    player.on('play', function () {
-      if (this.seeking() || this.currentTime() >= 0.1) return;
-
-      $.ajax({
-        url: '{% url "register_event" uuid=phase.uuid %}',
-        method: 'POST',
-        dataType: 'json',
-        contentType: 'application/json; charset=utf-8',
-        data: JSON.stringify({
-          event: 'VID_PLAY',
-          originalUrl: window.location.href,
-          lpid: '{{ landing_page_id }}'
-        })
-      });
-    });
-
-    player.on('ended', function () {
-      $.ajax({
-        url: '{% url "register_event" uuid=phase.uuid %}',
-        method: 'POST',
-        dataType: 'json',
-        contentType: 'application/json; charset=utf-8',
-        data: JSON.stringify({
-          event: 'VID_WATCHED',
-          originalUrl: window.location.href,
-          lpid: '{{ landing_page_id }}'
-        })
-      });
-    });
-  </script>
+	 player.on('ended', function () {
+             $.ajax({
+		 url: '{% url "register_event" uuid=phase.uuid %}',
+		 method: 'POST',
+		 dataType: 'json',
+		 contentType: 'application/json; charset=utf-8',
+		 data: JSON.stringify({
+                     event: 'VID_WATCHED',
+                     originalUrl: window.location.href,
+                     lpid: '{{ landing_page_id }}'
+		 })
+             });
+	 });
+	</script>
 
 </body>
-
 </html>
