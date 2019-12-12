@@ -1,15 +1,15 @@
 /* fonts */
 @font-face {
-  font-family: 'MyriadPro';
-  src: url('../fonts/MyriadPro-Regular.otf') format("opentype");
+  font-family: 'NeutrafaceSlabText';
+  src: url('../fonts/NeutrafaceSlabText-Book.otf') format("opentype");
   font-weight: noraml;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'MyriadPro';
-  src: url('../fonts/MyriadPro-Semibold_0.otf') format("opentype");
-  font-weight: 600;
+  font-family: 'NeutrafaceSlabText';
+  src: url('../fonts/NeutrafaceSlabText-Bold.otf') format("opentype");
+  font-weight: 700;
   font-style: normal;
 }
 

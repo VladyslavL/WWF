@@ -1,4 +1,10 @@
-var player = videojs(document.querySelector('.video-js'));
+var player = videojs(document.querySelector('.video-js'), {
+    html5: {
+        hls: {
+            overrideNative: !videojs.browser.IS_SAFARI
+        },
+    },
+});
 
 
 $(document).ready(function() {
