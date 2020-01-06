@@ -1,8 +1,8 @@
-{# -*- engine:django -*- #}
+{% vim: set ft=html syntax=htmldjango: %}
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nb">
 <head>
     <meta charset="UTF-8">
     <title>{{ receiver.first_name }}</title>
@@ -21,14 +21,14 @@
     <meta property="og:description" content="{{ receiver.first_name }} – jeg håper du vil delta på RCNs Riksmøte 2020." />
     <meta property="og:image"       content="{% static 'landingpages/wwf/images/rev-thumbnail.jpg' %}" />
     <meta property="fb:app_id" content="123456789" />
-    <script type="text/javascript" src="{% static "landingpages/wwf/js/jquery.js" %}"></script>
+    <script type="text/javascript" src="{% static 'landingpages/wwf/js/jquery.js' %}"></script>
     <script type="text/javascript" src="{% static 'landingpages/wwf/js/video.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'landingpages/wwf/js/lang/nb.js' %}"></script>
     <script type="text/javascript" src="{% static 'landingpages/wwf/js/videojs-flash.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'landingpages/wwf/js/videojs-flashls-source-handler.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'landingpages/wwf/js/videojs-contrib-hls.min.js' %}"></script>
-    <link rel="stylesheet" href="{% static "landingpages/wwf/style/libs.css" %}"/>
-    <link rel="stylesheet" href="{% static "landingpages/wwf/style/style.css" %}"/>
+    <link rel="stylesheet" href="{% static 'landingpages/wwf/style/libs.css' %}"/>
+    <link rel="stylesheet" href="{% static 'landingpages/wwf/style/style.css' %}"/>
 </head>
 <body>
 
@@ -47,8 +47,8 @@
     </header>
 
     <div class="video_scene">
-        <video-js class="video-js" preload="none" playsinline controls poster="{% static 'landingpages/wwf/images/thumbnail.jpg' %}" data-setup='{"customControlsOnMobile": true}'>
-            <source src="{{ phase.video_url }}" type="video/mp4">
+        <video-js class="video-js" preload="none" playsinline controls poster="{% static 'landingpages/wwf/images/thumbnail.jpg' %}">
+            <source src="{{ phase.video_url }}" type="application/x-mpegURL">
             <p class="vjs-no-js">
                 To view this video please enable JavaScript, and consider upgrading to a web browser that
                 <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
@@ -143,10 +143,10 @@
                 </div>
                 <div class="footer__info">
                     <div class="copyright">
-                        <small>© 2020 WWF. all rights reserved</small>
+                        <small>© 2020 WWF. All rights reserved</small>
                     </div>
                     <div class="powered_by">
-                        <small>Powered by <a href="#">Storm 121</a></small>
+                      <small>Powered by <a href="https://storm121.com" target="_blank" title="Storm 121 nettsiden">"Storm 121</a></small>
                     </div>
                 </div>
             </div>
