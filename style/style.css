@@ -1861,13 +1861,12 @@ header .button.scroll_down {
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
-    color: #fff;
-    border: 1px solid #fff;
+    color: #000;
+    border: 1px solid currentColor;
 }
 
 header .button.scroll_down:hover{
     background-color: #fff;
-    color: #e01220;
 }
 
 @media screen and (max-width: 1024px) and (min-width: 481px) and (orientation: landscape) {
