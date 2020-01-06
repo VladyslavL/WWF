@@ -18,7 +18,7 @@ body {
 }
 
 html {
-    font: 400 21px/1.4 "NeutrafaceSlabText", sans-serif;
+    font: 400 21px/1.4 "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     box-sizing: border-box;
     -ms-text-size-adjust: none;
     -webkit-text-size-adjust: none;
@@ -1310,9 +1310,10 @@ div.wpcf7 .screen-reader-response {
 }
 
 h1 {
-    font: bold 34px/1.25 "NeutrafaceSlabText", sans-serif;
+    font: bold 34px/1.25 'wwf-webfont';
     letter-spacing: -0.03113em;
     font-weight: bold;
+    letter-spacing: 1.6px;
 }
 
 @media screen and (min-width: 768px) {
@@ -1979,8 +1980,12 @@ header .button.scroll_down:hover{
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 481px) {
     .footer__buttons .button.is_fb_msg{display: none;}
+}
+
+@media screen and (max-width: 480px) {
+    .footer__buttons .button.is_dw{display: none;}
 }
 
 @media screen and (max-width: 1024px) {

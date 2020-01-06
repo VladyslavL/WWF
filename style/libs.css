@@ -1,17 +1,12 @@
 /* fonts */
 @font-face {
-  font-family: 'NeutrafaceSlabText';
-  src: url('../fonts/NeutrafaceSlabText-Book.otf') format("opentype");
-  font-weight: noraml;
+  font-family: 'wwf-webfont';
+  src: url('../fonts/wwf-webfont.woff');
+  font-weight: bold;
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'NeutrafaceSlabText';
-  src: url('../fonts/NeutrafaceSlabText-Bold.otf') format("opentype");
-  font-weight: 700;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400&display=swap');
 
 
 
