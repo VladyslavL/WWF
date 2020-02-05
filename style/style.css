@@ -2538,12 +2538,17 @@ header .button.scroll_down:hover{
     .button{
         box-shadow: none;
     }
+}
 
-    .video__desc a + p,
-    .video__desc p + p,
-    .video__desc a + p{
-        margin-top: 20px;
-    }
+.video__desc a + p,
+.video__desc p + p,
+.video__desc a + p{
+    margin-top: 20px;
+}
+
+.video__desc .button{
+    box-shadow: none;
+    justify-content: center;
 }
 
 .video__views {
